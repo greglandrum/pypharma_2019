@@ -1,0 +1,37 @@
+sources:
+  targets:
+    args:
+      csv_kwargs:
+        sep: '\t'
+        engine: 'python'
+      urlpath: https://github.com/greglandrum/rdkit_blog/raw/master/data/BLSets_actives_target_key.txt
+    description: 'maps target IDs to target descriptions'
+    driver: intake.source.csv.CSVSource
+    metadata: {}
+
+  actives:
+    args:
+      csv_kwargs:
+        sep: '\t'
+        engine: 'python'
+      urlpath: https://github.com/greglandrum/rdkit_blog/raw/master/data/BLSets_actives.txt
+    description: 'ChEMBL compounds and Ki values for the targets in the dataset'
+    driver: intake.source.csv.CSVSource
+    metadata: {}
+  selected_actives:
+    args:
+      csv_kwargs:
+        sep: ' '
+      urlpath: https://github.com/greglandrum/rdkit_blog/raw/master/data/BLSets_selected_actives.txt
+    description: '''ChEMBL compounds with Ki values <1nM against a subset of the targets in the full dataset.
+    The targets selected have diverse active compounds'''
+    driver: intake.source.csv.CSVSource
+    metadata: {}
+  decoys:
+    args:
+      csv_kwargs:
+        sep: '\t'
+      urlpath: https://github.com/greglandrum/rdkit_blog/raw/master/data/BLSets_singleic50_decoys.txt
+    description: 'a set of ChEMBL compounds that have only been tested in a single assay and where the IC50 is >1uM'
+    driver: intake.source.csv.CSVSource
+    metadata: {}

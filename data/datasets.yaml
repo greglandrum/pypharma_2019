@@ -1,0 +1,16 @@
+sources:
+  herg:
+    args:
+      path: ../data/herg.yaml
+    description: 'collection of hERG data'
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: 
+       blog_post: https://rdkit.blogspot.com/2019/07/using-intake-for-chemistry-data.html
+
+  briem_lessel:
+    args:
+      path: ../data/BLDatasets.yaml
+    description: 'A new "Briem & Lessel" dataset.'
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata:
+       blog_post: http://rdkit.blogspot.com/2019/10/a-new-lessel-and-briem-like-dataset.html
