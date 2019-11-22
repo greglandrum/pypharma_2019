@@ -1,0 +1,12 @@
+name: py37_pydata
+channels:
+  - defaults
+dependencies:
+  - python=3.7
+  - intake
+  - hvplot
+  - panel==0.5.1
+  - rdkit
+  - pandas=0.24
+prefix: C:\Users\glandrum\Anaconda3\envs\py37_pydata
+
